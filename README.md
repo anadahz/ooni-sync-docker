@@ -21,7 +21,7 @@ For further instructions on running Docker in Windows and Mac:
 You can build the ooni-sync Docker image with the following command:
 
 ```
-docker build -t ooni-sync:docker
+docker build -t ooni-sync:docker .
 ```
 
 Upon successful completion of the Docker image (ooni-sync) build, you should
@@ -34,9 +34,10 @@ Run the ooni-sync Docker image in:
 
 ### Linux
 
-Directory used to store ooni-reports: `/home/user/ooni-reports/`
+Directory used to store ooni-reports: `$HOME/ooni-reports/`
+
 ```
-docker run --rm --volume /home/user/ooni-reports/:/data -d -it ooni-sync:docker /bin/bash
+docker run --rm --volume $HOME/ooni-reports/:/data -it ooni-sync:docker
 ```
 
 ### Windows
@@ -44,14 +45,15 @@ docker run --rm --volume /home/user/ooni-reports/:/data -d -it ooni-sync:docker 
 Directory used to store ooni-reports: `c:/Users/ooni-reports`
 
 ```
-docker run --rm --volume c:/Users/ooni-reports:data -d -it ooni-sync:docker /bin/bash
+docker run --rm --volume c:/Users/ooni-reports:data -it ooni-sync:docker
 ```
 
 ### Mac
 
 Directory used to store ooni-reports: `/Users/user/ooni-reports/`
+
 ```
-docker run --rm --volume /Users/user/ooni-reports/:/data -d -it ooni-sync:docker /bin/bash
+docker run --rm --volume /Users/user/ooni-reports/:/data -it ooni-sync:docker
 ```
 
 You should now be able to run commands inside the ooni-sync Docker container,
